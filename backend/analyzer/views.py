@@ -164,9 +164,9 @@ def samples(request):
             "transcripts": [
                 {
                     "id": t["id"],
-                    "fellow_name": t["fellow_name"],
-                    "client": t["client"],
-                    "trap": t["trap"],
+                    "fellow_name": t["fellow"]["name"],
+                    "client": t["company"]["name"],
+                    "trap": t.get("scoringNotes", ""),
                     "transcript": t["transcript"],
                 }
                 for t in SAMPLE_TRANSCRIPTS["transcripts"]
@@ -178,7 +178,7 @@ def samples(request):
 @api_view(["POST"])
 def analyze(request):
     transcript = request.data.get("transcript", "").strip()
-    model = request.data.get("model", "llama3.2")
+    model = request.data.get("model", "llama3.2:latest")
 
     if not transcript:
         return Response(

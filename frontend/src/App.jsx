@@ -11,7 +11,7 @@ const API = 'http://localhost:8000/api'
 
 export default function App() {
   const [transcript, setTranscript] = useState('')
-  const [model, setModel] = useState('llama3.2')
+  const [model, setModel] = useState('llama3.2:latest')
   const [samples, setSamples] = useState([])
   const [health, setHealth] = useState('checking...')
   const [loading, setLoading] = useState(false)
