@@ -1,16 +1,16 @@
 :root {
-  --bg: #0f0f0f;
-  --surface: #191919;
-  --surface2: #222;
-  --border: #2e2e2e;
-  --text: #e8e4dc;
-  --muted: #888;
-  --dim: #555;
-  --accent: #e8c87a;
-  --positive: #6fcf97;
-  --negative: #eb5757;
-  --neutral: #9b9b9b;
-  --orange: #f2994a;
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --surface2: #f1f3f5;
+  --border: #dee2e6;
+  --text: #212529;
+  --muted: #495057;
+  --dim: #adb5bd;
+  --accent: #228be6;
+  --positive: #2f9e44;
+  --negative: #e03131;
+  --neutral: #868e96;
+  --orange: #e8590c;
 }
 
 * {
@@ -87,8 +87,9 @@ body {
 .panel {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .panel-header {
@@ -188,7 +189,7 @@ body {
 
 .run-btn {
   background: var(--accent);
-  color: #111;
+  color: #fff;
   border: none;
   border-radius: 6px;
   padding: 8px 22px;
@@ -253,8 +254,8 @@ body {
   padding: 16px;
   border-radius: 6px;
   border: 1px solid var(--negative);
-  background: rgba(235, 87, 87, 0.08);
-  color: #f0a0a0;
+  background: rgba(224, 49, 49, 0.05);
+  color: var(--negative);
   font-size: 13px;
 }
 
@@ -355,9 +356,9 @@ body {
   font-size: 12px;
   padding: 6px 10px;
   border-radius: 4px;
-  background: rgba(235, 87, 87, 0.1);
+  background: rgba(224, 49, 49, 0.05);
   border-left: 3px solid var(--negative);
-  color: #f0a0a0;
+  color: var(--negative);
 }
 
 .score-justification {
