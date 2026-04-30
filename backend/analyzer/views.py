@@ -12,10 +12,10 @@ OLLAMA_URL = "http://localhost:11434"
 # Load data files once at startup
 DATA_DIR = Path(settings.DATA_DIR)
 
-with open(DATA_DIR / "rubric.json") as f:
+with open(DATA_DIR / "rubric.json", encoding='utf-8') as f:
     RUBRIC = json.load(f)
 
-with open(DATA_DIR / "sample-transcripts.json") as f:
+with open(DATA_DIR / "sample-transcripts.json", encoding='utf-8') as f:
     SAMPLE_TRANSCRIPTS = json.load(f)
 
 
@@ -151,7 +151,7 @@ Remember:
     full_prompt = f"{SYSTEM_PROMPT}\n\n{user_prompt}"
 
     try:
-        with httpx.Client(timeout=300.0) as client:
+        with httpx.Client(timeout=600.0) as client:
             resp = client.post(
                 f"{OLLAMA_URL}/api/generate",
                 json={
