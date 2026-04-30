@@ -201,7 +201,7 @@ Remember:
     full_prompt = f"{SYSTEM_PROMPT}\n\n{user_prompt}"
 
     try:
-        with httpx.Client(timeout=120.0) as client:
+        with httpx.Client(timeout=300.0) as client:
             resp = client.post(
                 f"{OLLAMA_URL}/api/generate",
                 json={
